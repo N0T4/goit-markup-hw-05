@@ -355,7 +355,6 @@ h3 {
 }
 
 
-
 .link,
 .phone,
 .project,
@@ -372,12 +371,36 @@ h3 {
     color: var(--color-brend);
 }
 
+.link:hover {
+    color: var(--color-brend);
+}
+
+.header-bar {
+    position: relative;
+}
+
+.link:hover::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #404BBF;
+    border-radius: 2px;
+
+}
+
 .link {
+    font-weight: 500;
     display: block;
     padding: 24px 0px;
     text-decoration: none;
-    font-weight: 500;
     color: var(--color-brend2);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+
 
 }
 
