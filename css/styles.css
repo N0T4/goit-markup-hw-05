@@ -279,8 +279,38 @@ h3 {
     justify-content: space-between;
 }
 
-.project-port {
+.project-block-top-text {
+    position: relative;
+    overflow: hidden;
+}
 
+.project-top-text {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 40px 32px;
+
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+    transition-delay: 0ms;
+
+    color: var(--color-second-white);
+    background-color: #4D5AE5;
+}
+
+.project-port:hover .project-top-text {
+    transform: translateY(0);
+
+}
+
+.project-port {
     border-radius: 0px 0px 4px 4px;
     background: #FFFFFF;
     width: 360px;
@@ -387,6 +417,11 @@ h3 {
     color: var(--color-brend);
 }
 
+.mail:hover,
+.phone:hover {
+    color: var(--color-brend);
+}
+
 .link:hover {
     color: var(--color-brend);
 }
@@ -395,29 +430,27 @@ h3 {
     position: relative;
 }
 
-.link::after {
+
+
+.link.active::after {
     content: '';
-    width: 0;
+    width: 100%;
     height: 4px;
     position: absolute;
     bottom: 0;
     right: 0;
     background-color: #404BBF;
     border-radius: 2px;
-    transition: width, left;
-    transition-property: width, ;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0ms;
+    color: var(--color-brend2);
 }
 
-.link:hover::after {
-    left: 0;
-    width: 100%;
+.link.active {
+    color: var(--color-brend);
 }
+
+
 
 .link {
-    font-weight: 500;
     display: block;
     padding: 24px 0px;
     text-decoration: none;
@@ -426,13 +459,13 @@ h3 {
     font-size: 16px;
     letter-spacing: 0.02em;
 
-    transition-property: color, ;
+    transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4,
             0,
             0.2,
             1);
-    transition-delay: 0;
+    transition-delay: 0ms;
 
 
 }
@@ -446,6 +479,13 @@ h3 {
     font-size: 16px;
     line-height: 24px;
 
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4,
+            0,
+            0.2,
+            1);
+    transition-delay: 0ms;
 
     letter-spacing: 0.02em;
     text-decoration: none;
@@ -508,7 +548,7 @@ button:focus {
 }
 
 .order-button:hover {
-    background: #4D5AE5;
+    background: #404BBF;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 4px;
 }
@@ -661,4 +701,54 @@ button:focus {
     width: 24px;
     height: 24px;
     fill: var(--color-second-white)
+}
+
+.overlay {
+    padding-top: 88px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 19, 25, 0.5);
+    position: fixed;
+    top: 0;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+    margin: auto;
+    width: 408px;
+    min-height: 576px;
+    background-color: #FCFCFC;
+}
+
+.close-icon {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+}
+
+.close-botton {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+}
+
+.close-botton:active {
+    background-color: var(--color-brend);
+    fill: var(--color-second-white);
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
