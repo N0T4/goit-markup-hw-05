@@ -710,8 +710,18 @@ button:focus {
     background-color: rgba(17, 19, 25, 0.5);
     position: fixed;
     top: 0;
+    transition-property: opacity(0);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    transition-delay: 0ms;
 
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay.is-hidden {
+    transition-property: opacity(100%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    transition-delay: 0ms;
 }
 
 .modal {
