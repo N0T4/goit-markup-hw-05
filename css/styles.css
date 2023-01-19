@@ -305,12 +305,14 @@ h3 {
     background-color: #4D5AE5;
 }
 
-.project-port:hover .project-top-text {
+.project-port:hover .project-top-text,
+.project-port:focus .project-top-text {
     transform: translateY(0);
 
 }
 
 .project-port {
+    text-decoration: none;
     border-radius: 0px 0px 4px 4px;
     background: #FFFFFF;
     width: 360px;
