@@ -311,13 +311,7 @@ h3 {
 
 }
 
-.project-port {
-    text-decoration: none;
-    border-radius: 0px 0px 4px 4px;
-    background: #FFFFFF;
-    width: 360px;
-    font-weight: 500;
-    color: var(--color-brend2);
+.item-project {
     transition-property: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4,
@@ -325,10 +319,22 @@ h3 {
             0.2,
             1);
     transition-delay: 0ms;
+
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.project-port:hover {
+.project-port {
+    text-decoration: none;
+    border-radius: 0px 0px 4px 4px;
+    background: #FFFFFF;
+    width: 360px;
+    font-weight: 500;
+    color: var(--color-brend2);
+
+}
+
+.item-project:hover,
+.item-project:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
